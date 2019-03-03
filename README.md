@@ -18,12 +18,12 @@ Then run the container with : `docker run -it --rm --net=host xxxxxxxxx`
 
 ## How to modify the configuration
 Either edit the Dockerfile or the build args.
-DHCP_SERVER
-PXE_SERVER
-SERVER_HOSTNAME
-SERVER_USER
-SERVER_USER_SSH_KEY
-SERVER_IP
+- `DHCP_SERVER`
+- `PXE_SERVER`
+- `SERVER_HOSTNAME`
+- `SERVER_USER`
+- `SERVER_USER_SSH_KEY`
+- `SERVER_IP`
 
 ## Contributions
 If you have suggestions, please create a new GitHub issue or a pull request.
