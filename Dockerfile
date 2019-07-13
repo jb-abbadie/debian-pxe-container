@@ -10,7 +10,7 @@ RUN apk add --update \
 # Download and extract Debian
 RUN mkdir -p /var/lib/tftp
 WORKDIR /var/lib/tftp
-RUN curl http://ftp.nl.debian.org/debian/dists/stretch/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
+RUN curl http://ftp.nl.debian.org/debian/dists/Debian10.0/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
 RUN tar xzf netboot.tar.gz
 RUN rm netboot.tar.gz
 
