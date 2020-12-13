@@ -12,18 +12,19 @@ These are the dependencies required to build and run the box:
 ## How to run
 
 Build the image with your configuration :
-`docker build .`
+`docker build -t pxe-debian .`
 
-Then run the container with : `docker run -it --rm --net=host xxxxxxxxx`
+Create a config file like this :
+```
+DHCP_SERVER=192.168.1.1
+PXE_SERVER=192.168.1.40
+SERVER_IP=192.168.1.2
+SERVER_HOSTNAME=server.example.com
+SERVER_USER=user
+SERVER_USER_SSH_KEY=ssh-rsa XXXXXXXXXXX
+```
 
-## How to modify the configuration
-Either edit the Dockerfile or the build args.
-- `DHCP_SERVER`
-- `PXE_SERVER`
-- `SERVER_HOSTNAME`
-- `SERVER_USER`
-- `SERVER_USER_SSH_KEY`
-- `SERVER_IP`
+Then run the container with : `docker run -it --rm --cap-add NET_ADMIN --net=host --env-file env_file pxe-debian`
 
 ## Contributions
 If you have suggestions, please create a new GitHub issue or a pull request.
