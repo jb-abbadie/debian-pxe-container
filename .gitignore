@@ -22,4 +22,5 @@ bundles/
 .git/
 vendor/pkg/
 pyenv
-Vagrantfile<Paste>
+Vagrantfile
+*.env
