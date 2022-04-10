@@ -1,16 +1,15 @@
-FROM alpine:3.12
+FROM alpine:3.15
 
 # Install the necessary packages
-RUN apk add --update \
+RUN apk add --no-cache --update \
   dnsmasq \
   curl \
-  syslinux \
-  && rm -rf /var/cache/apk/*
+  syslinux
 
 # Download and extract Debian
 RUN mkdir -p /var/lib/tftp
 WORKDIR /var/lib/tftp
-RUN curl http://ftp.nl.debian.org/debian/dists/buster/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
+RUN curl http://ftp.nl.debian.org/debian/dists/bullseye/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
 RUN tar xzf netboot.tar.gz
 RUN rm netboot.tar.gz
 

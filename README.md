@@ -3,7 +3,7 @@
 A Docker image serving as a standalone PXE server and an automated preseed.
 
 This PXE currently serves:
-- Debian9
+- Debian11
 
 ## Dependencies
 These are the dependencies required to build and run the box:
