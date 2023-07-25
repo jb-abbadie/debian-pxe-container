@@ -1,4 +1,4 @@
-FROM alpine:3.15
+FROM alpine:3.18
 
 # Install the necessary packages
 RUN apk add --no-cache --update \
@@ -9,7 +9,8 @@ RUN apk add --no-cache --update \
 # Download and extract Debian
 RUN mkdir -p /var/lib/tftp
 WORKDIR /var/lib/tftp
-RUN curl http://ftp.nl.debian.org/debian/dists/bullseye/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
+#RUN curl http://ftp.nl.debian.org/debian/dists/bullseye/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
+run curl https://deb.debian.org/debian/dists/bookworm/main/installer-amd64/current/images/netboot/netboot.tar.gz -o netboot.tar.gz
 RUN tar xzf netboot.tar.gz
 RUN rm netboot.tar.gz
 
